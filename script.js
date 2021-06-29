@@ -21,7 +21,7 @@
 				box.innerHTML = html;
 				let currentPageFile = document.location.pathname.split('/').pop();
 				let links = box.querySelectorAll('.parts a');
-				let currentPageIndex = links.findIndex(e => e.getAttribute('href') === currentPageFile);
+				let currentPageIndex = Array.prototype.findIndex.call(links, e => e.getAttribute('href') === currentPageFile);
 				if (currentPageIndex < 0) return;
 				html = '<p class="prev-next-links">';
 				let href, text;
