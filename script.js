@@ -14,6 +14,7 @@
 			localStorage.setItem('contentsPage', contentsPageFile);
 		}
 		let contentsPageFile = localStorage.getItem('contentsPage');
+		if (contentsPageFile === '') contentsPageFile = 'index.html';
 		if (!isContentsPage && contentsPageFile) {
 			fetch(contentsPageFile).then(resp => resp.text()).then(html => {
 				let box = document.createElement('div');
